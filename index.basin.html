@@ -414,6 +414,15 @@
                 padding: 1.5rem 1rem;
             }
         }
+
+        .example-form {
+            overflow-x: auto;
+            white-space: nowrap;
+            background: var(--surface-dark);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -457,12 +466,14 @@
             </div>
             <div class="project">
                 <h3>Example Form</h3>
-                <pre><code>&lt;form action="https://usebasin.com/f/bec2e3c667f5" method="POST"&gt;
+                <div class="example-form">
+                    <pre><code>&lt;form action="https://usebasin.com/f/bec2e3c667f5" method="POST"&gt;
     &lt;input type="text" name="name" placeholder="Your Name" required&gt;
     &lt;input type="email" name="email" placeholder="Your Email" required&gt;
     &lt;textarea name="message" placeholder="Message" rows="5" required&gt;&lt;/textarea&gt;
     &lt;button type="submit"&gt;Send Message&lt;/button&gt;
 &lt;/form&gt;</code></pre>
+                </div>
             </div>
         </section>
     </div>
