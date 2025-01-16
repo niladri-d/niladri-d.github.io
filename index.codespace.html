@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How I Used Basin</title>
+    <title>My Resume</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Playfair Display', sans-serif;
+            font-family: 'Playfair Display', serif;
         }
 
         :root {
@@ -414,6 +414,32 @@
                 padding: 1.5rem 1rem;
             }
         }
+
+        .resume-section {
+            margin: 3rem 0;
+        }
+
+        .resume-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 1rem;
+        }
+
+        .resume-item {
+            background: var(--surface-dark);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .resume-item h3 {
+            font-size: 2em;
+            margin-bottom: 0.5rem;
+        }
+
+        .resume-item p {
+            font-size: 1.2em;
+        }
     </style>
 </head>
 <body>
@@ -439,30 +465,39 @@
     </div>
     <header>
         <img src="https://cdn.brandfetch.io/idZAyF9rlg/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="Header Image" style="max-width: 100%; height: auto; margin-bottom: 20px;">
-        <h1>How I Used Basin to Integrate the Backend</h1>
+        <h1>My Resume</h1>
     </header>
     <div class="content">
-        <section id="basin-integration" class="projects">
-            <h2>Basin Integration</h2>
-            <div class="project">
-                <h3>Overview</h3>
-                <p>Basin is a no-code form backend that allows you to collect form submissions without writing server-side code. It provides a simple and effective way to handle form submissions and notifications.</p>
+        <section id="experience" class="resume-section">
+            <h2>Experience</h2>
+            <div class="resume-item">
+                <h3>Job Title at Company</h3>
+                <p>Duration: January 2020 - Present</p>
+                <p>Description of responsibilities and achievements.</p>
             </div>
-            <div class="project">
-                <h3>Steps to Integrate Basin</h3>
-                <p>1. Create a form on your HTML page with the necessary input fields.</p>
-                <p>2. Set the form's action attribute to the Basin form endpoint URL.</p>
-                <p>3. Use the POST method to submit the form data to Basin.</p>
-                <p>4. Optionally, customize the form and add validation as needed.</p>
+            <div class="resume-item">
+                <h3>Job Title at Company</h3>
+                <p>Duration: June 2018 - December 2019</p>
+                <p>Description of responsibilities and achievements.</p>
             </div>
-            <div class="project">
-                <h3>Example Form</h3>
-                <pre><code>&lt;form action="https://usebasin.com/f/bec2e3c667f5" method="POST"&gt;
-    &lt;input type="text" name="name" placeholder="Your Name" required&gt;
-    &lt;input type="email" name="email" placeholder="Your Email" required&gt;
-    &lt;textarea name="message" placeholder="Message" rows="5" required&gt;&lt;/textarea&gt;
-    &lt;button type="submit"&gt;Send Message&lt;/button&gt;
-&lt;/form&gt;</code></pre>
+        </section>
+        <section id="education" class="resume-section">
+            <h2>Education</h2>
+            <div class="resume-item">
+                <h3>Degree at University</h3>
+                <p>Duration: September 2014 - May 2018</p>
+                <p>Description of coursework and achievements.</p>
+            </div>
+        </section>
+        <section id="skills" class="resume-section">
+            <h2>Skills</h2>
+            <div class="resume-item">
+                <h3>Technical Skills</h3>
+                <p>List of technical skills.</p>
+            </div>
+            <div class="resume-item">
+                <h3>Soft Skills</h3>
+                <p>List of soft skills.</p>
             </div>
         </section>
     </div>

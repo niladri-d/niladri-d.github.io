@@ -6,14 +6,14 @@
     <title>My Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Playfair Display', serif;
         }
 
         :root {
@@ -283,20 +283,169 @@
         .design-2 .content {
             background: var(--surface);
         }
+
+        .sidebar {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        .sidebar .close-btn {
+            display: block;
+            text-align: right;
+            padding: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .sidebar .close-btn i {
+            font-size: 1.5rem;
+            color: var(--text);
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 1rem 2rem;
+            color: var(--text);
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background: var(--primary-dark);
+        }
+
+        .menu-button {
+            display: none;
+            background: var(--primary-dark);
+            color: var(--text);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .menu-button:hover {
+            background: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .sidebar {
+                display: block;
+            }
+
+            body {
+                font-size: 1rem;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .projects h2, .contact h2 {
+                font-size: 2em;
+            }
+
+            .project h3 {
+                font-size: 1.5em;
+            }
+
+            .project p, .contact input, .contact textarea, .contact button, .footer-content, .footer-credit {
+                font-size: 1rem;
+            }
+
+            .footer-social {
+                font-size: 1.2rem;
+            }
+
+            .back-to-top {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.5rem 1rem;
+            }
+
+            .toggle-button, .menu-button {
+                padding: 0.25rem 0.5rem;
+                font-size: 1rem;
+            }
+
+            .sidebar a {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            header {
+                padding: 40px 10px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .project {
+                padding: 1rem;
+            }
+
+            .contact input, .contact textarea {
+                padding: 0.75rem;
+            }
+
+            .contact button {
+                padding: 0.75rem 1.5rem;
+            }
+
+            .footer {
+                padding: 1.5rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
     <nav>
         <div class="logo">
-            <a href="#">My Portfolio</a>
+            <a href="index.html">My Portfolio</a>
         </div>
         <div class="nav-links">
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
             <a href="index.basin.html">Basin Integration</a>
+            <a href="index.codespace.html">Visit Resume</a>
         </div>
         <button class="toggle-button" onclick="toggleDesign()">Toggle Design</button>
+        <button class="menu-button" onclick="toggleSidebar()">Menu</button>
     </nav>
+    <div class="sidebar" id="sidebar">
+        <span class="close-btn" onclick="toggleSidebar()"><i class="fas fa-arrow-left"></i></span>
+        <a href="#projects" onclick="toggleSidebar()">Projects</a>
+        <a href="#contact" onclick="toggleSidebar()">Contact</a>
+        <a href="index.basin.html" onclick="toggleSidebar()">Basin Integration</a>
+        <a href="index.codespace.html" onclick="toggleSidebar()">Visit Resume</a>
+    </div>
     <header>
         <img src="https://cdn.brandfetch.io/idZAyF9rlg/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="Header Image" style="max-width: 100%; height: auto; margin-bottom: 20px;">
         <h1>I'm a Software Engineer with Startups Focusing on Cloud and API-Powered Solutions</h1>
@@ -347,6 +496,10 @@
             document.body.classList.remove(...designs);
             designIndex = (designIndex + 1) % designs.length;
             document.body.classList.add(designs[designIndex]);
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
         }
     </script>
 </body>
