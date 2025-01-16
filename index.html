@@ -34,7 +34,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
             color: var(--text);
             min-height: 100vh;
             overflow-x: hidden;
@@ -66,6 +66,20 @@
             color: var(--accent);
         }
 
+        .toggle-button {
+            background: var(--primary-dark);
+            color: var(--text);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            background: var(--primary);
+        }
+
         header {
             text-align: center;
             padding: 60px 20px;
@@ -73,20 +87,24 @@
             border-radius: 1.5rem;
             margin-bottom: 3rem;
             box-shadow: 0 10px 30px -5px rgba(255, 0, 127, 0.5);
+            user-select: none; /* Disable text selection */
         }
 
         h1 {
             font-size: 3.5em;
             margin: 0;
+            line-height: 1.2;
+            letter-spacing: 0.05em;
+            font-weight: 700;
         }
 
         .content {
             padding: 30px;
             max-width: 900px;
             margin: 0 auto;
-            background: var(--surface);
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
             border-radius: 1rem;
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px -5px rgba(255, 0, 127, 0.5);
         }
 
         .projects {
@@ -234,6 +252,15 @@
         .back-to-top:hover {
             background: var(--primary);
         }
+
+        /* Design 2 styles */
+        .design-2 body {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+
+        .design-2 .content {
+            background: var(--surface);
+        }
     </style>
 </head>
 <body>
@@ -245,6 +272,7 @@
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </div>
+        <button class="toggle-button" onclick="toggleDesign()">Toggle Design</button>
     </nav>
     <header>
         <h1>I'm a Software Engineer with Startups Focusing on Cloud and API-Powered Solutions</h1>
@@ -285,5 +313,10 @@
             <i class="fas fa-arrow-up"></i>
         </button>
     </footer>
+    <script>
+        function toggleDesign() {
+            document.body.classList.toggle('design-2');
+        }
+    </script>
 </body>
 </html>
