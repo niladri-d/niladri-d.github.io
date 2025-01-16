@@ -6,12 +6,13 @@
     <title>My Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         :root {
@@ -88,6 +89,7 @@
             margin-bottom: 3rem;
             box-shadow: 0 10px 30px -5px rgba(255, 0, 127, 0.5);
             user-select: none; /* Disable text selection */
+            background-attachment: fixed; /* Parallax effect */
         }
 
         h1 {
@@ -105,6 +107,16 @@
             background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
             border-radius: 1rem;
             box-shadow: 0 10px 30px -5px rgba(255, 0, 127, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         .projects {
@@ -314,8 +326,12 @@
         </button>
     </footer>
     <script>
+        let designIndex = 0;
         function toggleDesign() {
-            document.body.classList.toggle('design-2');
+            const designs = ['design-1', 'design-2'];
+            document.body.classList.remove(...designs);
+            designIndex = (designIndex + 1) % designs.length;
+            document.body.classList.add(designs[designIndex]);
         }
     </script>
 </body>
