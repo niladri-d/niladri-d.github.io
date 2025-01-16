@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Intro from "../components/Intro.astro";
+import Templates from "../components/Templates.astro";
+import TableOfContents from "../components/TableOfContents.astro";
+import WhatIsJamstack from "../components/WhatIsJamstack.astro";
+import GettingStarted from "../components/GettingStarted.astro";
+import Resources from "../components/Resources.astro";
+import About from "../components/About.astro";
+---
+
+<Layout title="Working on the page">
+  <Header />
+  <main>
+    <Intro />
+    <Templates />
+    <TableOfContents />
+    <div>
+      <WhatIsJamstack />
+      <GettingStarted />
+      <Resources />
+    </div>
+    <About />
+  </main>
+  <footer class="mb-8 ml-32 text-neutral-400">
+    &copy; 2024 Jamstack.wtf
+  </footer> 
+</Layout>

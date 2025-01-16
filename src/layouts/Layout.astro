@@ -1,0 +1,36 @@
+---
+import { GoogleAnalytics } from 'astro-google-analytics';
+interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+import "../styles/global.css";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<GoogleAnalytics id="G-PXXEGE47R8" />
+		<meta charset="UTF-8" />
+		<title>{title}</title>
+		<meta name="description" content="Jamstack has revolutionized the way we build for the web by providing a simpler developer experience, better performance, lower cost, and greater scalability.">
+		<meta property="og:title" content={title}>
+		<meta property="og:image" content="https://jamstack.wtf/jamstack-wtf-meta.png/">
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@stackbit" />
+		<meta name="twitter:creator" content="@stackbit" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content="Jamstack has revolutionized the way we build for the web by providing a simpler developer experience, better performance, lower cost, and greater scalability." />
+		<meta name="twitter:url" content="https://jamstack.wtf" />
+		<meta name="twitter:image" content="https://jamstack.wtf/jamstack-wtf-meta.png/" />
+
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+
+	</head>
+	<body class="font-sans text-white bg-neutral-950 max-w-8xl">
+		<slot />
+	</body>
+</html>
