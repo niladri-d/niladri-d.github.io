@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        :root {
+            --primary: #a1c4fd;
+            --primary-dark: #c2e9fb;
+            --secondary: #ff4500;
+            --accent: #00ff7f;
+            --background: #000000;
+            --surface: #1a1a1a;
+            --surface-dark: #0d0d0d;
+            --text: #ffffff;
+            --text-muted: #b3b3b3;
+            --success: #00ff00;
+            --warning: #ffcc00;
+            --error: #ff0000;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: var(--surface);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+            border-radius: 1.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 10px 30px -5px rgba(255, 0, 127, 0.5);
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin: 0;
+        }
+
+        .content {
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        .projects {
+            margin: 3rem 0;
+        }
+
+        .projects h2 {
+            font-size: 2.5em;
+            margin-bottom: 1rem;
+        }
+
+        .project {
+            background: var(--surface-dark);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .project h3 {
+            font-size: 2em;
+            margin-bottom: 0.5rem;
+        }
+
+        .project p {
+            font-size: 1.2em;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact {
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 1rem;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            max-width: 600px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--surface);
+            color: var(--text);
+            font-size: 1.2rem;
+        }
+
+        .contact button {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 1rem;
+            background: var(--primary-dark);
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .contact button:hover {
+            background: var(--primary);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary));
+            padding: 2rem 2rem;
+            border-radius: 1.5rem;
+            margin-top: 3rem;
+            box-shadow: 0 10px 30px -5px rgba(255, 0, 127, 0.5);
+            text-align: center;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-content::before,
+        .footer-content::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .footer-social {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-social a {
+            margin: 0 0.5rem;
+            color: var(--text);
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--primary);
+        }
+
+        .back-to-top {
+            margin-top: 1rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 1rem;
+            background: var(--primary-dark);
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="#">My Portfolio</a>
+        </div>
+        <div class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    <header>
+        <h1>I'm a Software Engineer with Startups Focusing on Cloud and API-Powered Solutions</h1>
+    </header>
+    <div class="content">
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>Description of project 1.</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>Description of project 2.</p>
+            </div>
+            <!-- Add more projects as needed -->
+        </section>
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            &copy; 2025 My Portfolio. All rights reserved.
+        </div>
+        <div class="footer-social">
+            <a href="https://x.com/bniladridas" target="_blank">
+                <img src="https://cdn.brandfetch.io/idS5WhqBbM/theme/light/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="X Logo" style="height: 24px;">
+            </a>
+        </div>
+        <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+</body>
+</html>
