@@ -151,6 +151,15 @@
             transform: translateY(-5px);
         }
 
+        .project a {
+            color: var(--accent);
+            transition: color 0.3s ease;
+        }
+
+        .project a:hover {
+            color: var(--primary);
+        }
+
         .contact {
             margin: 3rem 0;
             text-align: center;
@@ -430,6 +439,12 @@
             border-radius: 1rem;
             margin-bottom: 2rem;
             box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .resume-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.5);
         }
 
         .resume-item h3 {
