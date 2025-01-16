@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>How I Used Basin</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -151,15 +151,6 @@
             transform: translateY(-5px);
         }
 
-        .project a {
-            color: var(--accent);
-            transition: color 0.3s ease;
-        }
-
-        .project a:hover {
-            color: var(--primary);
-        }
-
         .contact {
             margin: 3rem 0;
             text-align: center;
@@ -291,37 +282,39 @@
             <a href="#">My Portfolio</a>
         </div>
         <div class="nav-links">
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#contact">Contact</a>
             <a href="index.basin.html">Basin Integration</a>
         </div>
         <button class="toggle-button" onclick="toggleDesign()">Toggle Design</button>
     </nav>
     <header>
         <img src="https://cdn.brandfetch.io/idZAyF9rlg/theme/light/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B" alt="Header Image" style="max-width: 100%; height: auto; margin-bottom: 20px;">
-        <h1>I'm a Software Engineer with Startups Focusing on Cloud and API-Powered Solutions</h1>
+        <h1>How I Used Basin to Integrate the Backend</h1>
     </header>
     <div class="content">
-        <section id="projects" class="projects">
-            <h2>Projects</h2>
+        <section id="basin-integration" class="projects">
+            <h2>Basin Integration</h2>
             <div class="project">
-                <h3>Project 1 <a href="https://example.com/project1" target="_blank"><i class="fas fa-arrow-right"></i></a></h3>
-                <p>Description of project 1.</p>
+                <h3>Overview</h3>
+                <p>Basin is a no-code form backend that allows you to collect form submissions without writing server-side code. It provides a simple and effective way to handle form submissions and notifications.</p>
             </div>
             <div class="project">
-                <h3>Project 2 <a href="https://example.com/project2" target="_blank"><i class="fas fa-arrow-right"></i></a></h3>
-                <p>Description of project 2.</p>
+                <h3>Steps to Integrate Basin</h3>
+                <p>1. Create a form on your HTML page with the necessary input fields.</p>
+                <p>2. Set the form's action attribute to the Basin form endpoint URL.</p>
+                <p>3. Use the POST method to submit the form data to Basin.</p>
+                <p>4. Optionally, customize the form and add validation as needed.</p>
             </div>
-            <!-- Add more projects as needed -->
-        </section>
-        <section id="contact" class="contact">
-            <h2>Contact</h2>
-            <form action="https://usebasin.com/f/bec2e3c667f5" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <div class="project">
+                <h3>Example Form</h3>
+                <pre><code>&lt;form action="https://usebasin.com/f/bec2e3c667f5" method="POST"&gt;
+    &lt;input type="text" name="name" placeholder="Your Name" required&gt;
+    &lt;input type="email" name="email" placeholder="Your Email" required&gt;
+    &lt;textarea name="message" placeholder="Message" rows="5" required&gt;&lt;/textarea&gt;
+    &lt;button type="submit"&gt;Send Message&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+            </div>
         </section>
     </div>
     <footer class="footer">
