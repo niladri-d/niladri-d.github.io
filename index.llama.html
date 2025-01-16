@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Project 2</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Playfair Display', serif;
         }
 
         :root {
@@ -248,37 +250,25 @@
 <body>
     <nav>
         <div class="logo">
-            <a href="#">My Portfolio</a>
+            <a href="index.html"><i class="fas fa-arrow-left"></i></a>
         </div>
         <div class="nav-links">
             <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <!-- Removed contact option -->
         </div>
     </nav>
     <header>
-        <h1>I'm a Software Engineer with Startups Focusing on Cloud and API-Powered Solutions</h1>
+        <h1>Vision AI</h1>
     </header>
     <div class="content">
         <section id="projects" class="projects">
             <h2>Projects</h2>
             <div class="project">
-                <h3>Project 1 <a href="https://example.com/project1" target="_blank"><i class="fas fa-arrow-right"></i></a></h3>
-                <p>Description of project 1.</p>
-            </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>Description of project 2.</p>
+                <h3>Llama Vision Project <a href="https://dragon-ai-assistant.vercel.app" target="_blank"><i class="fas fa-arrow-right"></i></a></h3>
+                <p>It is designed to analyze images using a backend service powered by FastAPI and a frontend built with React. The backend service handles image uploads and analysis requests, while the frontend provides a user interface for uploading images and displaying analysis results. The project uses Docker Compose to manage the services and dependencies.</p>
             </div>
             <!-- Add more projects as needed -->
-        </section>
-        <section id="contact" class="contact">
-            <h2>Contact</h2>
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+            <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7285303238059323392?compact=1" height="399" width="710" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
         </section>
     </div>
     <footer class="footer">
